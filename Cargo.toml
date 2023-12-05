@@ -1,0 +1,19 @@
+[package]
+name = "tauri-plugin-tor"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+arti-client = "0.12.0"
+arti-hyper = "0.12.0"
+tls-api = "0.9.0"
+tls-api-native-tls = "0.9.0"
+tokio = { version = "1", features = [ "macros", "rt-multi-thread" ] }
+hyper = { version = "0.14", features = [ "http1", "client", "runtime" ] }
+anyhow = "1.0.75"
+rusqlite = { version = "0.30.0", features = [ "bundled" ] }
+
+[target.'cfg(target_vendor="apple")'.dev-dependencies]
+tls-api-openssl = "0.9.0"
